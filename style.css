@@ -24,6 +24,10 @@ section {
   font-weight: bold;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Botões */
 .btn {
   display: inline-block;
@@ -528,8 +532,13 @@ form textarea {
 
 .depoimento-item video,
 .depoimento-item img {
+  max-width: 280px;         /* Limite ideal para simular um celular */
   width: 100%;
-  border-radius: 8px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  margin: 0 auto;
+  display: block;
 }
 
 .depoimento-item blockquote {
@@ -562,6 +571,90 @@ form textarea {
 
 .next-arrow:hover {
   transform: translateY(-50%) scale(1.1);
+}
+
+/* ===================== CONTATO ===================== */
+
+.contato {
+  background-color: #000; /* fundo escuro */
+  color: #fff;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.contato h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.contato form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  background-color: #111;
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid #333;
+}
+
+.contato input,
+.contato textarea {
+  padding: 0.9rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #1a1a1a;
+  color: #fff;
+  outline: none;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contato input::placeholder,
+.contato textarea::placeholder {
+  color: #888;
+}
+
+.contato input:focus,
+.contato textarea:focus {
+  border: 1px solid #333;
+  box-shadow: 0 0 5px rgba(228, 32, 45, 0.5);
+}
+
+.contato textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Checkbox */
+.checkbox-wrapper {
+  text-align: left;
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+  margin-right: 0.5rem;
+  accent-color: #e4202d; /* vermelho */
+}
+
+/* Botão */
+.contato .btn {
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #e4202d;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contato .btn:hover {
+  background-color: #ff2a38;
 }
 
 
@@ -667,3 +760,4 @@ form textarea {
     width: 90%;
   }
 }
+
