@@ -1,4 +1,6 @@
-/* Fonte principal */
+/* ===================== CONFIGURAÇÕES GERAIS ===================== */
+
+/* Fonte principal e estilo base */
 body {
   font-family: 'Poppins', sans-serif;
   background-color: #000;
@@ -28,7 +30,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Botões */
+/* ===================== BOTÕES ===================== */
 .btn {
   display: inline-block;
   padding: 12px 24px;
@@ -47,11 +49,18 @@ html {
   padding: 14px 30px;
 }
 
-/* HERO */
+/* ===================== SEÇÃO HERO ===================== */
 .hero {
   padding: 80px 40px;
   background-color: #000;
+  background-image: url('./assets/fundos/fundo5.png'); /* Caminho da sua imagem */
+  background-size: cover;         /* Cobre toda a área */
+  background-position: center;    /* Centraliza a imagem */
+  background-repeat: no-repeat;   /* Evita repetições */
+  position: relative;
+  z-index: 1;
 }
+
 .hero-container {
   display: flex;
   justify-content: space-between;
@@ -60,6 +69,8 @@ html {
   gap: 40px;
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2; /* Garante que o conteúdo fique acima da sombra */
 }
 .hero-left {
   flex: 1 1 500px;
@@ -95,7 +106,7 @@ html {
   box-shadow: 0 0 20px rgba(255, 0, 0, 0.1);
 }
 
-/* VÍDEO */
+/* ===================== SEÇÃO VÍDEO ===================== */
 .video-section {
   text-align: center;
   padding: 60px 20px;
@@ -110,7 +121,8 @@ html {
   margin-bottom: 30px; /* ou 40px, se quiser mais espaço */
 }
 
-/* PARA QUEM É */
+/* ===================== SEÇÃO PARA QUEM É ===================== */
+
 .para-quem-e {
   text-align: center;
   padding: 60px 20px;
@@ -187,6 +199,8 @@ html {
 .mensagem-motivacional strong {
   display: block;
 }
+
+/* ===================== SEÇÕES GERAIS: TÍTULOS E SUBTÍTULOS ===================== */
 
 .section-title {
   text-align: center;
@@ -267,7 +281,7 @@ html {
   margin-top: 15px;
 }
 
-/* Aprender */
+/* ===================== SEÇÃO APRENDER ===================== */
 .aprender-section {
   background-color: #000;
   color: #fff;
@@ -315,7 +329,7 @@ html {
   font-size: 1.1rem;
 }
 
-/* SOBRE */
+/* ===================== SEÇÃO SOBRE ===================== */
 .sobre {
   display: flex;
   flex-wrap: wrap;
@@ -332,7 +346,7 @@ html {
   max-width: 500px;
 }
 
-/* PLANOS */
+/* ===================== SEÇÃO PLANOS ===================== */
 .planos {
   display: flex;
   justify-content: center;
@@ -383,7 +397,7 @@ html {
   box-shadow: 0 0 15px rgba(255, 0, 0, 0.2);
 }
 
-/* Garantia */
+/* ===================== SEÇÃO GARANTIA ===================== */
 .garantia-section {
   display: flex;
   justify-content: center;
@@ -470,7 +484,7 @@ html {
   }
 }
 
-/* CONTATO */
+/* ===================== SEÇÃO CONTATO ===================== */
 .contato {
   padding: 60px 20px;
   text-align: center;
@@ -491,7 +505,7 @@ form textarea {
   height: 100px;
 }
 
-/* DEPOIMENTOS */
+/* ===================== SEÇÃO DEPOIMENTOS ===================== */
 .depoimentos-section {
   padding: 80px 20px;
   text-align: center;
@@ -658,7 +672,7 @@ form textarea {
 }
 
 
-/* FAQ */
+/* ===================== SEÇÃO FAQ ===================== */
 .faq-section {
   background-color: #000;
   padding: 100px 20px;
@@ -736,7 +750,7 @@ form textarea {
   line-height: 1.6;
 }
 
-/* Rodapé */
+/* ===================== SEÇÃO RODAPÉ ===================== */
 .footer {
   background-color: #000;
   padding: 40px 20px;
