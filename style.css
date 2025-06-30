@@ -53,7 +53,7 @@ html {
 .hero {
   padding: 80px 40px;
   background-color: #000;
-  background-image: url('./assets/fundos/fundo5.png'); /* Caminho da sua imagem */
+  background-image: url('./assets/fundos/fundo2.png'); /* Caminho da sua imagem */
   background-size: cover;         /* Cobre toda a área */
   background-position: center;    /* Centraliza a imagem */
   background-repeat: no-repeat;   /* Evita repetições */
@@ -110,6 +110,10 @@ html {
 .video-section {
   text-align: center;
   padding: 60px 20px;
+  background-image: url('./assets/fundos/fundo1.png'); /* Caminho da sua imagem */
+  background-size: cover;         /* Cobre toda a área */
+  background-position: center;    /* Centraliza a imagem */
+  background-repeat: no-repeat;   /* Evita repetições */
 }
 .video-container iframe {
   width: 100%;
@@ -126,6 +130,10 @@ html {
 .para-quem-e {
   text-align: center;
   padding: 60px 20px;
+  background-image: url('./assets/fundos/fundo5.png'); /* Caminho da sua imagem */
+  background-size: cover;         /* Cobre toda a área */
+  background-position: center;    /* Centraliza a imagem */
+  background-repeat: no-repeat;   /* Evita repetições */
 }
 .cards {
   display: flex;
@@ -286,6 +294,10 @@ html {
   background-color: #000;
   color: #fff;
   padding: 80px 20px;
+  background-image: url('./assets/fundos/fundo1.png'); /* Caminho da sua imagem */
+  background-size: cover;         /* Cobre toda a área */
+  background-position: center;    /* Centraliza a imagem */
+  background-repeat: no-repeat;   /* Evita repetições */
 }
 
 .aprender-title {
@@ -337,6 +349,10 @@ html {
   align-items: center;
   gap: 80px;
   padding: 60px 20px;
+  background-image: url('./assets/fundos/fundo4.png'); /* Caminho da sua imagem */
+  background-size: cover;         /* Cobre toda a área */
+  background-position: center;    /* Centraliza a imagem */
+  background-repeat: no-repeat;   /* Evita repetições */
 }
 .sobre img {
   max-width: 600px;
