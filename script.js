@@ -35,3 +35,25 @@ const scrollAmount = 320; // valor igual ao tamanho do card + margem
   prevBtn.addEventListener('click', () => {
     slider.scrollLeft -= scrollAmount;
   });
+
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const section = document.querySelector('#depoimentos');
+    const iframe = document.querySelector('#video-depoimento-1');
+    let hasPlayed = false;
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !hasPlayed) {
+          const originalSrc = iframe.src;
+          iframe.src = originalSrc + "?autoplay=1";
+          hasPlayed = true;
+          observer.unobserve(section);
+        }
+      });
+    }, {
+      threshold: 0.5, // 50% da seção visível
+    });
+
+    observer.observe(section);
+  });

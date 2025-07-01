@@ -53,10 +53,11 @@ html {
 .hero {
   padding: 80px 40px;
   background-color: #000;
-  background-image: url('./assets/fundos/fundo2.png'); /* Caminho da sua imagem */
-  background-size: cover;         /* Cobre toda a área */
-  background-position: center;    /* Centraliza a imagem */
-  background-repeat: no-repeat;   /* Evita repetições */
+  background-image: url('./assets/fundos/fundo_rosto.png');
+  background-size: 65%;              /* Reduz o tamanho da imagem */
+  background-position: right center; /* Alinha o rosto à direita */
+  background-repeat: no-repeat;
+  background-attachment: scroll;
   position: relative;
   z-index: 1;
 }
@@ -370,6 +371,10 @@ html {
   flex-wrap: wrap;
   gap: 120px;
   padding: 60px 20px;
+  background-image: url('./assets/fundos/fundo3.png'); /* Caminho da sua imagem */
+  background-size: cover;         /* Cobre toda a área */
+  background-position: center;    /* Centraliza a imagem */
+  background-repeat: no-repeat;   /* Evita repetições */
 }
 
 .plano-card {
@@ -694,6 +699,10 @@ form textarea {
   padding: 100px 20px;
   color: #fff;
   font-family: 'Poppins', sans-serif;
+  background-image: url('./assets/fundos/fundo5.png'); /* Caminho da sua imagem */
+  background-size: cover;         /* Cobre toda a área */
+  background-position: center;    /* Centraliza a imagem */
+  background-repeat: no-repeat;   /* Evita repetições */
 }
 
 .faq-title {
