@@ -33,10 +33,10 @@ html {
 /* ===================== BOTÕES ===================== */
 .btn {
   display: inline-block;
-  padding: 12px 24px;
+  padding: 16px 28px;
   background-color: red;
   color: #fff;
-  border-radius: 4px;
+  border-radius: 50px;
   font-weight: 600;
   transition: background 0.3s;
   margin-top: 20px;
@@ -63,33 +63,40 @@ html {
 }
 
 .hero-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 40px;
   max-width: 1200px;
   margin: 0 auto;
-  position: relative;
-  z-index: 2; /* Garante que o conteúdo fique acima da sombra */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 40px;
 }
+
 .hero-left {
   flex: 1 1 500px;
-  max-width: 600px;
+  max-width: 500px;
+  text-align: left;
 }
+
 .hero-left h1 {
   font-size: 2.8rem;
+  line-height: 1.2;
   margin-bottom: 20px;
 }
+
 .hero-left .slogan {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  font-weight: 500;
   margin-bottom: 10px;
 }
+
 .hero-left .mentoria-desc {
   font-size: 1rem;
   color: #ccc;
   margin-bottom: 20px;
+  text-align: justify;
 }
+
 .hero-left .autor {
   font-style: italic;
   color: #888;
@@ -105,6 +112,52 @@ html {
   height: auto;
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(255, 0, 0, 0.1);
+}
+
+/* Redes Sociais */
+.social {
+  margin-top: 3rem;
+  display: flex;
+  align-items: center; /* Alinha texto e ícones na horizontal */
+  gap: 1rem;
+}
+
+.social__title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #ccc;
+  white-space: nowrap;
+}
+
+.social__list {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+}
+
+.social__list li {
+  list-style: none;
+}
+
+.social__link {
+  background-color: red;
+  width: 2.5rem;             /* largura da bolinha */
+  height: 2.5rem;            /* altura da bolinha */
+  font-size: 1.2rem;         /* tamanho do ícone */
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.social__link:hover {
+  background-color: darkred; /* cor mais escura ao passar o mouse */
+  color: #fff;
 }
 
 /* ===================== SEÇÃO VÍDEO ===================== */
@@ -683,7 +736,7 @@ form textarea {
   background-color: #e4202d;
   color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 50px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
