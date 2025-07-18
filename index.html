@@ -11,7 +11,7 @@
   <!-- Meta tags Open Graph para redes sociais -->
   <meta property="og:title" content="Mentoria 21 Dias | Fabrício Pouciano" />
   <meta property="og:description" content="Transforme seus hábitos e sua vida com a mentoria 21 Dias." />
-  <meta property="og:image" content="https://seudominio.com/imagem-capa.png" />
+  <meta property="og:image" content="./assets/images/fabricio_frente.jpeg" />
   <meta property="og:url" content="https://seudominio.com" />
   <meta property="og:type" content="website" />
 
@@ -24,13 +24,18 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <script src="https://kit.fontawesome.com/a2e0e9a2c0.js" crossorigin="anonymous"></script>
 
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
   <!-- Estilos principais -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div id="topo"></div>
 
   <!--===================== HERO =====================-->
-  <header class="hero">
+  <header class="hero" id="hero">
     <div class="hero-container">
       <div class="hero-left">
         <h1><span class="highlight">21 Dias</span> para uma <span class="bold">Nova Mente</span></h1>
@@ -44,17 +49,17 @@
         <span class="social__title">Siga-me</span>
         <ul class="social__list">
           <li>
-            <a href="https://www.youtube.com/@fabriciopouciano" class="social__link" target="_blank" aria-label="YouTube">
+            <a href="https://www.youtube.com/@FPouciano" class="social__link" target="_blank" aria-label="YouTube">
               <i class="ri-youtube-fill"></i>
             </a>
           </li>
           <li>
-            <a href="https://www.instagram.com/fabriciopouciano/" class="social__link" target="_blank" aria-label="Instagram">
+            <a href="https://www.instagram.com/fpouciano_/" class="social__link" target="_blank" aria-label="Instagram">
               <i class="ri-instagram-line"></i>
             </a>
           </li>
           <li>
-            <a href="https://www.tiktok.com/@fabriciopouciano" class="social__link" target="_blank" aria-label="TikTok">
+            <a href="https://www.tiktok.com/@fpouciano" class="social__link" target="_blank" aria-label="TikTok">
               <i class="fab fa-tiktok"></i>
             </a>
           </li>
@@ -200,27 +205,53 @@
       <div class="depoimento-item">
         <iframe id="video-depoimento-1"
                 src="https://drive.google.com/file/d/1LGjXdCioXt9EMOgKww9-eJ0BnDmTLIo-/preview"
-                width="300" height="500" allow="autoplay" allowfullscreen>
-        </iframe>
+                allow="autoplay" allowfullscreen></iframe>
       </div>
 
       <!-- Slide 2 -->
       <div class="depoimento-item">
         <iframe src="https://drive.google.com/file/d/1b8LDE8cc2faDR4OE4MvahKOx5ovD1RDg/preview"
-                width="300" height="500" allow="autoplay" allowfullscreen>
-        </iframe>
+                allow="autoplay" allowfullscreen></iframe>
       </div>
 
       <!-- Slide 3 -->
       <div class="depoimento-item">
-        <blockquote>
-          <p>“21 dias e uma nova mentalidade. Vale cada segundo!”</p>
-          <span>Aluno anônimo</span>
-        </blockquote>
+        <img src="./assets/imagens/aluno4.png" alt="Aluno 4" class="video-thumb">
       </div>
+    </div>
 
-      <!-- Seta para navegação -->
-      <button class="next-arrow">→</button>
+    <!-- Linha inferior com comentários -->
+    <div class="depoimentos-comentarios swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="./assets/relatos/relato1.jpeg" alt="Comentário 1">
+        </div>
+        <div class="swiper-slide">
+          <img src="./assets/relatos/relato2.jpeg" alt="Comentário 2">
+        </div>
+        <div class="swiper-slide">
+          <img src="./assets/relatos/relato3.jpeg" alt="Comentário 3">
+        </div>
+        <div class="swiper-slide">
+          <img src="./assets/relatos/relato4.jpeg" alt="Comentário 4">
+        </div>
+        <div class="swiper-slide">
+          <img src="./assets/relatos/relato5.jpeg" alt="Comentário 5">
+        </div>
+        <div class="swiper-slide">
+          <img src="./assets/relatos/relato6.jpeg" alt="Comentário 6">
+        </div>
+        <div class="swiper-slide">
+          <img src="./assets/relatos/relato7.jpeg" alt="Comentário 7">
+        </div>
+        <div class="swiper-slide">
+          <img src="./assets/relatos/relato8.jpeg" alt="Comentário 8">
+        </div>
+        <!-- Repita quantos slides quiser -->
+      </div>
+    
+      <!-- Contêiner onde o Swiper vai inserir as bolinhas -->
+      <div class="swiper-pagination"></div>
     </div>
   </section>
 
@@ -338,10 +369,58 @@
   <footer class="footer">
     <div class="footer-container">
       <p>&copy; 2025 Fabrício Pouciano. Todos os direitos reservados.</p>
+
+      <!-- Redes sociais no rodapé -->
+      <div class="footer-social">
+        <ul class="social__list">
+          <li class="social__item">
+            <a href="https://www.youtube.com/@FPouciano" class="social__link" target="_blank" aria-label="YouTube">
+              <i class="ri-youtube-fill"></i>
+            </a>
+          </li>
+          <li class="social__item">
+            <a href="https://www.instagram.com/fpouciano_/" class="social__link" target="_blank" aria-label="Instagram">
+              <i class="ri-instagram-line"></i>
+            </a>
+          </li>
+          <li class="social__item">
+            <a href="https://www.tiktok.com/@fpouciano" class="social__link" target="_blank" aria-label="TikTok">
+              <i class="fab fa-tiktok"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   </footer>
 
+  <!-- Botão para voltar ao topo -->
+  <a href="#topo" class="scroll-to-top" aria-label="Voltar ao topo">
+    <i class="ri-arrow-up-s-line"></i>
+  </a>
+
 <!--===================== Scripts =====================-->
-  <script src="script.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="./script.js"></script>
+
+<!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+  <script>
+  const swiperComentarios = new Swiper('.depoimentos-comentarios', {
+    slidesPerView: 'auto',      // mostra quantos couberem
+    spaceBetween: 20,           // espaço entre as imagens
+    grabCursor: true,           // cursor de “grabbing”
+    pagination: {
+      el: '.depoimentos-comentarios .swiper-pagination',
+      clickable: true           // permite clicar nas bolinhas
+    },
+    breakpoints: {
+      320:  { slidesPerView: 1 },
+      640:  { slidesPerView: 2 },
+      1024: { slidesPerView: 3 }
+    }
+  });
+</script>
+
 </body>
 </html>

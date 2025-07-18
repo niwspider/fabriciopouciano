@@ -7,6 +7,8 @@ body {
   color: #fff;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;            /* <-- Evita estouro horizontal */
+  max-width: 100vw;              /* <-- Garante que a largura nunca ultrapasse */
 }
 
 h1, h2, h3 {
@@ -54,7 +56,7 @@ html {
   padding: 80px 40px;
   background-color: #000;
   background-image: url('./assets/fundos/fundo_rosto.png');
-  background-size: 65%;              /* Reduz o tamanho da imagem */
+  background-size: 70%;              /* Reduz o tamanho da imagem */
   background-position: right center; /* Alinha o rosto à direita */
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -76,6 +78,7 @@ html {
   flex: 1 1 500px;
   max-width: 500px;
   text-align: left;
+  margin-top: 20px;
 }
 
 .hero-left h1 {
@@ -409,7 +412,7 @@ html {
   background-repeat: no-repeat;   /* Evita repetições */
 }
 .sobre img {
-  max-width: 600px;
+  max-width: 500px;
   border-radius: 8px;
 }
 .bio {
@@ -601,64 +604,94 @@ form textarea {
 
 .depoimentos-slider {
   display: flex;
-  align-items: center;
   justify-content: center;
-  overflow: hidden;
-  position: relative;
+  flex-wrap: nowrap;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 20px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
 }
 
 .depoimento-item {
-  min-width: 300px;
-  max-width: 300px;
-  margin: 0 15px;
+  flex: 0 0 auto;
+  width: 300px;
+  background-color: #111;
   border: 1px solid #333;
   border-radius: 10px;
-  padding: 20px;
-  background-color: #111;
-  flex-shrink: 0;
+  padding: 15px;
+  scroll-snap-align: start;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.08);
 }
 
-.depoimento-item video,
-.depoimento-item img {
-  max-width: 280px;         /* Limite ideal para simular um celular */
+.depoimento-item iframe,
+.depoimento-item .video-thumb {
   width: 100%;
-  height: auto;
+  aspect-ratio: 9/16;
   border-radius: 16px;
+  object-fit: cover;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
-  margin: 0 auto;
   display: block;
+  margin: 0 auto 10px;
 }
 
-.depoimento-item blockquote {
-  font-style: italic;
-  font-size: 1.1rem;
-  line-height: 1.4;
-  color: #fff;
+/* Linha inferior com comentários */
+.depoimentos-comentarios {
+  position: relative;
+  padding: 0 80px 50px;      /* Aumentado de 20px para 40px nas laterais */
+  margin-top: 40px;
+  max-width: 1200px;         /* Limita a largura máxima do carrossel */
+  margin-left: auto;         /* Centraliza horizontalmente */
+  margin-right: auto;
+  overflow: hidden;
 }
 
-.depoimento-item blockquote span {
-  display: block;
-  margin-top: 10px;
-  font-size: 0.85rem;
-  color: #aaa;
+.depoimentos-comentarios .swiper-wrapper {
+  display: flex;
+  align-items: center;
 }
 
-.next-arrow {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 2rem;
-  background: transparent;
-  border: none;
-  color: red;
-  cursor: pointer;
-  z-index: 10;
-  transition: transform 0.2s ease;
+/* Slide container da imagem */
+.depoimentos-comentarios .swiper-slide {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  background-color: transparent;
 }
 
-.next-arrow:hover {
-  transform: translateY(-50%) scale(1.1);
+/* Imagem do comentário */
+.depoimentos-comentarios .swiper-slide img {
+  width: 100%;
+  max-height: 90vh;           /* imagem pode ocupar até 80% da altura da tela */
+  height: auto;
+  object-fit: contain;        /* garante legibilidade sem cortes */
+  border-radius: 16px;
+  box-shadow: 0 0 14px rgba(255, 0, 0, 0.2);
+  background-color: #111;
+   cursor: zoom-in;
+}
+
+.swiper-pagination {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.swiper-pagination-bullet {
+  background-color: #fff;
+  opacity: 0.5;
+  width: 10px;
+  height: 10px;
+  margin: 0 4px;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: red;
+  opacity: 1;
 }
 
 /* ===================== CONTATO ===================== */
@@ -831,25 +864,77 @@ form textarea {
 /* ===================== SEÇÃO RODAPÉ ===================== */
 .footer {
   background-color: #000;
-  padding: 40px 20px;
+  color: #ccc;
+  padding: 2rem 0;
   text-align: center;
   border-top: 1px solid #111;
 }
 
-.footer-container p {
-  color: #aaa;
-  font-size: 0.9rem;
-  letter-spacing: 0.5px;
+.footer-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-/* RESPONSIVO */
-@media (max-width: 768px) {
-  .cards, .testimonials-grid, .planos {
-    flex-direction: column;
-    align-items: center;
-  }
-  .card {
-    width: 90%;
-  }
+/* Herdando estilo das redes sociais */
+.footer-social {
+  margin-top: 1.2rem;
+}
+
+.footer .social__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.footer .social__link {
+  background-color: red;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.2rem;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.footer .social__link:hover {
+  background-color: darkred;
+  color: #fff;
+}
+
+/* ===================== BOTÃO VOLTAR AO TOPO ===================== */
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #ff0000;
+  color: #fff;
+  font-size: 2rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+
+.scroll-to-top:hover {
+  background-color: #cc0000;
+  transform: scale(1.1);
+}
+
+.scroll-to-top.show {
+  opacity: 1;
+  visibility: visible;
 }
 
