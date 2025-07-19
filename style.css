@@ -32,6 +32,10 @@ html {
   scroll-behavior: smooth;
 }
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 /* ===================== BOTÕES ===================== */
 .btn {
   display: inline-block;
@@ -56,7 +60,7 @@ html {
   padding: 80px 40px;
   background-color: #000;
   background-image: url('./assets/fundos/fundo_rosto.png');
-  background-size: 70%;              /* Reduz o tamanho da imagem */
+  background-size: clamp(70%, 50vw, 100%);              /* Reduz o tamanho da imagem */
   background-position: right center; /* Alinha o rosto à direita */
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -163,6 +167,34 @@ html {
   color: #fff;
 }
 
+/* Em tablets e telas médias (≤ 1024px) */
+@media (max-width: 1024px) {
+  .hero {
+    /* Garante escala maior à medida que o container encolhe */
+    background-size: clamp(80%, 70vw, 100%);
+    background-position: right center;
+  }
+}
+
+/* Tablets e smartphones (≤ 768px) */
+@media (max-width: 768px) {
+  .hero {
+    background-size: cover;             /* cobre toda a área */
+    background-position: center center; /* centraliza o rosto */
+    padding: 60px 20px;                 /* reduz espaçamentos */
+    min-height: auto;                   /* ou defina um min-height se quiser */
+  }
+}
+
+/* Smartphones pequenos (≤ 480px) */
+@media (max-width: 480px) {
+  .hero {
+    background-size: cover;
+    background-position: center center;
+    padding: 40px 10px;
+  }
+}
+
 /* ===================== SEÇÃO VÍDEO ===================== */
 .video-section {
   text-align: center;
@@ -181,6 +213,8 @@ html {
 .video-section h2 {
   margin-bottom: 30px; /* ou 40px, se quiser mais espaço */
 }
+
+
 
 /* ===================== SEÇÃO PARA QUEM É ===================== */
 
@@ -938,3 +972,486 @@ form textarea {
   visibility: visible;
 }
 
+/* ===== Até tablets (max-width: 768px) ===== */
+@media (max-width: 768px) {
+  /* -- Seção Vídeo -- */
+  .video-section {
+    padding: 40px 15px;
+  }
+  .video-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  .video-container iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+  }
+
+  /* -- Seção “Para Quem É” -- */
+  .para-quem-e {
+    padding: 40px 15px;
+  }
+  .cards {
+    gap: 15px;
+  }
+  .card {
+    width: calc(50% - 15px); /* duas colunas */
+    padding: 20px;
+  }
+  .card h4 {
+    font-size: 1.1rem;
+  }
+  .card p {
+    font-size: 0.9rem;
+  }
+  .mensagem-motivacional {
+    font-size: 1.1rem;
+    margin-top: 40px;
+  }
+}
+
+/* ===== Até smartphones (max-width: 480px) ===== */
+@media (max-width: 480px) {
+  /* -- Seção Vídeo -- */
+  .video-section {
+    padding: 30px 10px;
+  }
+  .video-section h2 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+  }
+  .video-container iframe {
+    aspect-ratio: 16/9;
+  }
+
+/* Seção “Para Quem É” – Responsividade aprimorada */
+@media (max-width: 768px) {
+  .para-quem-e {
+    padding: 40px 30px;  /* mais espaçamento lateral */
+  }
+  .cards {
+    gap: 20px;
+  }
+  .card {
+    width: calc(50% - 20px); /* duas colunas com gap de 20px */
+    max-width: 240px;        /* limita a largura máxima */
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .para-quem-e {
+    padding: 30px 20px;  /* mais espaços nas laterais */
+  }
+  .cards {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .card {
+    width: auto;          /* usa max-width */
+    max-width: 300px;     /* controla largura do card */
+    margin: 0 auto;       /* centraliza */
+    padding: 18px;
+  }
+}}
+
+@media (max-width: 768px) {
+  /* Seção Aprender */
+  .aprender-section {
+    padding: 60px 15px;
+  }
+  .aprender-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+  .aprender-grid {
+    gap: 15px;
+    max-width: 100%;
+    margin: 0 10px;
+  }
+  .aprender-item {
+    padding: 18px;
+    font-size: 0.95rem;
+  }
+  .aprender-item .numero {
+    font-size: 1rem;
+  }
+
+  /* Seção Sobre */
+  .sobre {
+    flex-direction: column;
+    gap: 40px;
+    padding: 50px 15px;
+  }
+  .sobre img {
+    max-width: 90%;
+  }
+  .bio {
+    max-width: 90%;
+    text-align: center;
+  }
+
+  /* Seção Planos */
+  .planos {
+    gap: 60px;
+    padding: 50px 15px;
+  }
+  .plano-card {
+    width: calc(50% - 30px);
+    padding: 30px 20px;
+  }
+  .plano-card h3 {
+    font-size: 1.3rem;
+  }
+  .plano-detalhes .preco {
+    font-size: 1.4rem;
+  }
+  .livro img {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Seção Aprender */
+  .aprender-section {
+    padding: 40px 10px;
+  }
+  .aprender-title {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+  }
+  .aprender-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 0 5px;
+  }
+  .aprender-item {
+    padding: 15px;
+    font-size: 0.9rem;
+  }
+
+  /* Seção Sobre */
+  .sobre {
+    padding: 40px 10px;
+  }
+  .sobre img {
+    max-width: 100%;
+  }
+  .bio {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  /* Seção Planos */
+  .planos {
+    flex-direction: column;
+    gap: 40px;
+    padding: 40px 10px;
+  }
+  .plano-card {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    padding: 25px 15px;
+  }
+  .plano-card h3 {
+    font-size: 1.2rem;
+  }
+  .plano-detalhes .preco {
+    font-size: 1.2rem;
+  }
+  .livro img {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  /* ===== Seção Garantia ===== */
+  .garantia-section {
+    padding: 40px 15px;
+  }
+  .garantia-card {
+    padding: 30px;
+    max-width: 600px;           /* Limita a largura total */
+    margin: 0 auto;             /* Centraliza no container */
+  }
+  .garantia-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+  .garantia-selo {
+    width: 200px;               /* Imagem menor */
+  }
+  .garantia-texto h2 {
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+  }
+  .garantia-texto p {
+    font-size: 0.9rem;
+  }
+  .garantia-btn {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+  }
+
+  /* ===== Seção Contato ===== */
+  .contato form {
+    gap: 12px;
+  }
+  .contato form input,
+  .contato form textarea {
+    width: 100%;
+    max-width: 400px;           /* Nunca ultrapassa 400px */
+  }
+
+  /* ===== Seção Depoimentos ===== */
+  .depoimentos-section {
+    padding: 60px 15px;
+  }
+  .section-title {
+    font-size: 1.8rem;
+  }
+  .section-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+  }
+  .depoimentos-slider {
+    gap: 15px;
+    padding-bottom: 15px;
+  }
+  .depoimento-item {
+    width: 260px;               /* Cards menores */
+  }
+  .depoimentos-comentarios {
+    padding: 0 40px 30px;
+    max-width: 100%;
+  }
+  .depoimentos-comentarios .swiper-slide {
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* ===== Seção Garantia ===== */
+  .garantia-section {
+    padding: 30px 10px;
+  }
+  .garantia-card {
+    padding: 20px;
+  }
+  .garantia-selo {
+    width: 150px;
+  }
+  .garantia-texto h2 {
+    font-size: 1.4rem;
+  }
+  .garantia-texto p {
+    font-size: 0.85rem;
+  }
+  .garantia-btn {
+    padding: 10px 18px;
+    font-size: 0.9rem;
+  }
+
+  /* ===== Seção Contato ===== */
+  .contato {
+    padding: 40px 10px;
+  }
+  .contato form input,
+  .contato form textarea {
+    max-width: 100%;
+  }
+
+  /* ===== Seção Depoimentos ===== */
+  .depoimentos-section {
+    padding: 50px 10px;
+  }
+  .section-title {
+    font-size: 1.6rem;
+  }
+  .section-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+  }
+  .depoimentos-slider {
+    gap: 10px;
+  }
+  .depoimento-item {
+    width: 90vw;                /* ocupa 90% da largura da tela */
+    max-width: 300px;
+  }
+  .depoimentos-comentarios {
+    padding: 0 20px 20px;
+  }
+  .depoimentos-comentarios .swiper-slide {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  /* ===== Seção Contato ===== */
+  .contato {
+    padding: 40px 15px;
+  }
+  .contato h3 {
+    font-size: 1.8rem;
+  }
+  .contato form {
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+  .contato input,
+  .contato textarea {
+    width: 100%;
+    max-width: none;
+  }
+  .contato textarea {
+    min-height: 100px;
+  }
+  .checkbox-wrapper {
+    font-size: 0.9rem;
+  }
+  .contato .btn {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  /* ===== Seção FAQ ===== */
+  .faq-section {
+    padding: 80px 15px;
+  }
+  .faq-title {
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+  }
+  .faq-container {
+    gap: 12px;
+    margin: 0 10px;
+  }
+  .faq-question {
+    font-size: 0.95rem;
+    padding: 14px 16px;
+  }
+  .faq-answer p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 480px) {
+  /* ===== Seção Contato ===== */
+  .contato {
+    padding: 30px 10px;
+  }
+  .contato h3 {
+    font-size: 1.6rem;
+  }
+  .contato form {
+    padding: 1rem;
+    gap: 0.8rem;
+  }
+  .contato input,
+  .contato textarea {
+    width: 100%;
+  }
+  .contato textarea {
+    min-height: 80px;
+  }
+  .checkbox-wrapper {
+    font-size: 0.85rem;
+  }
+  .contato .btn {
+    font-size: 0.9rem;
+    padding: 0.7rem 1.5rem;
+  }
+
+
+  /* ===== Seção FAQ ===== */
+  .faq-section {
+    padding: 60px 10px;
+  }
+  .faq-title {
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+  }
+  .faq-container {
+    gap: 10px;
+    margin: 0 5px;
+  }
+  .faq-question {
+    font-size: 0.9rem;
+    padding: 12px 14px;
+  }
+  .faq-answer p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    padding: 14px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Rodapé */
+  .footer {
+    padding: 1.5rem 0;
+  }
+  .footer-container {
+    padding: 0 15px;
+  }
+  .footer p {
+    font-size: 0.9rem;
+  }
+  .footer .social__list {
+    gap: 0.8rem;
+    margin-top: 0.8rem;
+  }
+  .footer .social__link {
+    width: 2.2rem;
+    height: 2.2rem;
+    font-size: 1rem;
+  }
+
+  /* Botão “Voltar ao Topo” */
+  .scroll-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Rodapé */
+  .footer {
+    padding: 1rem 0;
+  }
+  .footer-container {
+    padding: 0 10px;
+  }
+  .footer p {
+    font-size: 0.85rem;
+  }
+  .footer .social__list {
+    gap: 0.6rem;
+    margin-top: 0.6rem;
+  }
+  .footer .social__link {
+    width: 2rem;
+    height: 2rem;
+    font-size: 0.9rem;
+  }
+
+  /* Botão “Voltar ao Topo” */
+  .scroll-to-top {
+    bottom: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.6rem;
+  }
+}
