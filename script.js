@@ -72,28 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Auto-play no primeiro vídeo de depoimento
-  const section = document.querySelector('#depoimentos');
-  const iframe = document.querySelector('#video-depoimento-1');
-  let hasPlayed = false;
-
-  if (section && iframe) {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && !hasPlayed) {
-          const originalSrc = iframe.src;
-          iframe.src = originalSrc + "?autoplay=1";
-          hasPlayed = true;
-          observer.unobserve(section);
-        }
-      });
-    }, {
-      threshold: 0.5,
-    });
-
-    observer.observe(section);
-  }
-
   // Mostrar botão de voltar ao topo
   const heroSection = document.querySelector('.hero');
   const scrollTopButton = document.querySelector('.scroll-to-top');
