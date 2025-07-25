@@ -638,14 +638,25 @@ form textarea {
 
 .depoimentos-slider {
   display: flex;
-  justify-content: center;
-  flex-wrap: nowrap;
+  justify-content: flex-start;    /* alinha à esquerda por padrão */
   gap: 20px;
-  overflow-x: auto;
+  overflow-x: auto;               /* habilita swipe no mobile */
   padding-bottom: 20px;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;
+  overscroll-behavior-x: contain;
 }
+
+@media (min-width: 768px) {
+  .depoimentos-slider {
+    justify-content: center;     /* centraliza os itens no desktop */
+    overflow-x: visible;         /* desativa a rolagem horizontal */
+    scroll-snap-type: none;      /* opcional: remove snap se não fizer sentido */
+  }
+}
+
+
 
 .depoimento-item {
   flex: 0 0 auto;
@@ -656,6 +667,12 @@ form textarea {
   padding: 15px;
   scroll-snap-align: start;
   box-shadow: 0 0 10px rgba(255, 0, 0, 0.08);
+  scroll-snap-align: start;
+  scroll-snap-stop: always;    /* evita “pular” para outro slide */
+}
+
+.depoimentos-slider::-webkit-scrollbar {
+  display: none;
 }
 
 .depoimento-item iframe,
