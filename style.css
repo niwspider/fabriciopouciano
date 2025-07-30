@@ -2,7 +2,7 @@
 
 /* Fonte principal e estilo base */
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: #000;
   color: #fff;
   margin: 0;
@@ -214,7 +214,29 @@ html {
   margin-bottom: 30px; /* ou 40px, se quiser mais espaço */
 }
 
+.image-container {
+  margin-top: 30px; /* espaçamento entre o botão e a imagem */
+}
 
+.image-container img {
+  max-width: 50%;
+  height: auto;
+  display: block;
+  margin: 0 auto; /* centraliza a imagem horizontalmente */
+}
+
+/* Responsividade para a imagem da seção vídeo */
+@media (max-width: 768px) {
+  .image-container img {
+    max-width: 90%; /* aumenta a largura da imagem no mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .image-container img {
+    max-width: 100%;
+  }
+}
 
 /* ===================== SEÇÃO PARA QUEM É ===================== */
 
@@ -706,7 +728,8 @@ form textarea {
 .depoimentos-comentarios .swiper-slide {
   flex-shrink: 0;
   width: 100%;
-  max-width: 800px;
+  max-width: none;        /* permite largura fluida */
+  width: 90vw;            /* até 90% da largura da viewport */
   height: auto;
   display: flex;
   justify-content: center;
@@ -721,10 +744,10 @@ form textarea {
   max-height: 90vh;           /* imagem pode ocupar até 80% da altura da tela */
   height: auto;
   object-fit: contain;        /* garante legibilidade sem cortes */
-  border-radius: 16px;
+  border-radius: 4px;
   box-shadow: 0 0 14px rgba(255, 0, 0, 0.2);
   background-color: #111;
-   cursor: zoom-in;
+  cursor: zoom-in;
 }
 
 .swiper-pagination {
